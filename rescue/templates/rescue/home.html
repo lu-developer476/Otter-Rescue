@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Una misión para cuidar el humedal junto a una pequeña nutria.">
+  <title>Rescate Nutria — Aventuras en el humedal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'rescue/css/style.css' %}">
+</head>
+<body>
+  <header class="navbar"><a class="brand" href="#inicio" aria-label="Rescate Nutria, inicio"><span class="brand-mark">🦦</span><span>Rescate<br><b>Nutria</b></span></a>
+    <nav aria-label="Navegación principal"><a href="#guia">Guía</a><a href="#ranking">Ranking</a><button class="nav-play" data-open-modal>Nueva partida <span>→</span></button></nav>
+  </header>
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">AVENTURA COOPERATIVA · 7–12 AÑOS</p><h1 id="hero-title">El humedal<br>te necesita.</h1><p class="intro">Una nutria bebé perdió el camino a su madriguera. Encontrá pistas, cuidá el agua y ayudala a volver con su familia.</p><button class="primary-button" data-open-modal>Empezar una misión <span>→</span></button><p class="note">Sin reloj, sin presión: cada decisión cuenta.</p></div>
+      <div class="scene" aria-label="Ilustración de una nutria navegando por un humedal"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="reeds reeds-left">♧ ♧ ♧</div><div class="reeds reeds-right">♧ ♧</div><div class="water"><span class="ripple ripple-one"></span><span class="ripple ripple-two"></span></div><div class="otter"><span class="ear left"></span><span class="ear right"></span><span class="body"></span><span class="face"><i></i><i></i><b>⌣</b></span><span class="paw">♧</span></div><div class="lily lily-one">●</div><div class="lily lily-two">●</div></div>
+    </section>
+    <section class="cards" id="guia"><article><span class="card-icon coral">⌕</span><div><h2>Observá antes de actuar</h2><p>La guía te enseña a leer huellas, sonidos y señales del humedal.</p></div></article><article><span class="card-icon yellow">♥</span><div><h2>Cada misión deja algo mejor</h2><p>Recogé residuos, liberá canales y protegé a quienes viven ahí.</p></div></article><article id="ranking"><span class="card-icon blue">★</span><div><h2>Ranking de guardianes</h2><p>Celebrá constancia y buenas decisiones, no la velocidad.</p></div></article></section>
+  </main>
+  <footer><span>© 2026 Todos los derechos reservados • Built with Python &amp; Django • UX/UI Interface • Deployed on Render ®</span></footer>
+  <dialog id="game-modal" aria-labelledby="modal-title"><button class="close" data-close-modal aria-label="Cerrar">×</button><p class="eyebrow">ARMÁ TU AVENTURA</p><h2 id="modal-title">¿Cómo será esta misión?</h2><form method="dialog"><fieldset><legend>Modo</legend><label><input type="radio" name="mode" checked><span>En equipo</span></label><label><input type="radio" name="mode"><span>Exploración libre</span></label></fieldset><fieldset><legend>Escenario</legend><label><input type="radio" name="scene" checked><span>Delta al atardecer</span></label><label><input type="radio" name="scene"><span>Laguna de juncos</span></label></fieldset><fieldset><legend>Dificultad</legend><label><input type="radio" name="difficulty" checked><span>Curiosa</span></label><label><input type="radio" name="difficulty"><span>Guardiana</span></label></fieldset><button class="primary-button" value="default">Crear partida <span>→</span></button></form></dialog>
+  <script src="{% static 'rescue/js/main.js' %}"></script>
+</body></html>
