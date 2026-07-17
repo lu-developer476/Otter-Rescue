@@ -13,6 +13,9 @@ class HomePageTests(TestCase):
 
         self.assertContains(response, 'id="game-form"')
         self.assertContains(response, 'value="En equipo"')
+        self.assertContains(response, 'value="Defensa de represa"')
+        self.assertContains(response, 'value="Bosque inundado"')
+        self.assertContains(response, 'value="Estuario nocturno"')
         self.assertContains(response, 'id="game"')
         self.assertContains(response, 'id="otter-canvas"')
         self.assertContains(response, 'id="trash-count"')
