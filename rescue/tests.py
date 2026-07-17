@@ -23,3 +23,5 @@ class HomePageTests(TestCase):
         self.assertContains(response, 'id="enemy-count"')
         self.assertContains(response, 'id="score-count"')
         self.assertContains(response, 'id="best-score"')
+        self.assertContains(response, 'id="sound-toggle"')
+        self.assertContains(response, 'id="sound-volume"')
