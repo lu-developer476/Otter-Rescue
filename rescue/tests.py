@@ -8,11 +8,11 @@ class HomePageTests(TestCase):
         self.assertContains(response, "Rescate Nutria")
         self.assertEqual(response.status_code, 200)
 
-    def test_game_configuration_includes_values_for_starting_a_mission(self):
+    def test_game_configuration_includes_canvas_game(self):
         response = self.client.get(reverse("home"))
 
         self.assertContains(response, 'id="game-form"')
         self.assertContains(response, 'value="En equipo"')
-        self.assertContains(response, 'id="mission"')
-        self.assertContains(response, 'id="mission-card"')
-        self.assertContains(response, 'id="mission-progress"')
+        self.assertContains(response, 'id="game"')
+        self.assertContains(response, 'id="otter-canvas"')
+        self.assertContains(response, 'id="trash-count"')

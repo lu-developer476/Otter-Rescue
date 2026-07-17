@@ -22,12 +22,12 @@
       <div class="scene" aria-label="Ilustración de una nutria navegando por un humedal"><div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="reeds reeds-left">♧ ♧ ♧</div><div class="reeds reeds-right">♧ ♧</div><div class="water"><span class="ripple ripple-one"></span><span class="ripple ripple-two"></span></div><div class="otter"><span class="ear left"></span><span class="ear right"></span><span class="body"></span><span class="face"><i></i><i></i><b>⌣</b></span><span class="paw">♧</span></div><div class="lily lily-one">●</div><div class="lily lily-two">●</div></div>
     </section>
     <section class="cards" id="guia"><article><span class="card-icon coral">⌕</span><div><h2>Observá antes de actuar</h2><p>La guía te enseña a leer huellas, sonidos y señales del humedal</p></div></article><article><span class="card-icon yellow">♥</span><div><h2>Cada misión deja algo mejor</h2><p>Recogé residuos, liberá canales y protegé a quienes viven ahí</p></div></article><article id="ranking"><span class="card-icon blue">★</span><div><h2>Ranking de guardianes</h2><p>Celebrá constancia y buenas decisiones, no la velocidad</p></div></article></section>
-    <section class="mission" id="mission" hidden aria-labelledby="mission-title" tabindex="-1">
-      <p class="eyebrow">MISIÓN EN CURSO</p>
-      <h2 id="mission-title">La búsqueda comienza</h2>
-      <p id="mission-summary" aria-live="polite"></p>
-      <p class="mission-progress" id="mission-progress" aria-live="polite"></p>
-      <div class="mission-card" id="mission-card"></div>
+    <section class="game" id="game" hidden aria-labelledby="game-title" tabindex="-1">
+      <div class="game-heading"><div><p class="eyebrow">MISIÓN EN CURSO</p><h2 id="game-title">Guiá a la nutria a casa</h2><p id="game-summary" aria-live="polite"></p></div><button class="restart-button" id="restart-game" type="button">↻ Reiniciar</button></div>
+      <div class="game-hud" aria-label="Estado de la partida"><p>♻ Residuos: <strong id="trash-count">0 / 8</strong></p><p>♥ Energía: <strong id="health-count">3</strong></p><p id="game-message" aria-live="polite">Juntá los residuos y llegá a la madriguera.</p></div>
+      <div class="canvas-frame"><canvas id="otter-canvas" width="960" height="540" aria-label="Juego del humedal. Mové a la nutria con las flechas o WASD para recoger residuos y llegar a casa."></canvas></div>
+      <div class="game-controls" aria-label="Controles táctiles"><button type="button" data-direction="up" aria-label="Mover arriba">▲</button><div><button type="button" data-direction="left" aria-label="Mover izquierda">◀</button><button type="button" data-direction="down" aria-label="Mover abajo">▼</button><button type="button" data-direction="right" aria-label="Mover derecha">▶</button></div></div>
+      <p class="keyboard-tip">Usá las flechas o <b>W A S D</b> para nadar. Evitá las botellas: te hacen perder energía.</p>
     </section>
   </main>
   <footer><span>© 2026 Todos los derechos reservados • Built with Python &amp; Django • UX/UI Interface • Deployed on Render ®</span></footer>
