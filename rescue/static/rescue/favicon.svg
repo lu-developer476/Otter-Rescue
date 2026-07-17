@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Rescate Nutria</title>
+  <desc id="desc">Una nutria sonriente sobre el agua del humedal</desc>
+  <rect width="64" height="64" rx="16" fill="#075e68"/>
+  <path d="M0 45c9-5 17-5 26 0s18 5 38 0v19H0z" fill="#7bd0dc"/>
+  <path d="M7 53c6-3 12-3 18 0M38 53c6-3 12-3 18 0" fill="none" stroke="#d8f2e9" stroke-linecap="round" stroke-width="2"/>
+  <path d="M20 38c0-10 6-17 13-17 9 0 15 7 15 17 0 7-6 12-14 12S20 45 20 38z" fill="#8c6246"/>
+  <circle cx="25" cy="24" r="6" fill="#704a36"/>
+  <circle cx="42" cy="24" r="6" fill="#704a36"/>
+  <path d="M23 37c0-7 5-12 11-12s11 5 11 12c0 6-5 10-11 10s-11-4-11-10z" fill="#b98563"/>
+  <circle cx="29" cy="35" r="2" fill="#163e43"/>
+  <circle cx="39" cy="35" r="2" fill="#163e43"/>
+  <path d="M31 40c2 2 4 2 6 0" fill="none" stroke="#163e43" stroke-linecap="round" stroke-width="2"/>
+  <path d="M16 43c-5 0-8 2-9 5 5 0 9-1 12-4M50 43c5 0 8 2 9 5-5 0-9-1-12-4" fill="#704a36"/>
+</svg>
