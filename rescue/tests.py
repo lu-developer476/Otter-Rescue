@@ -14,3 +14,5 @@ class HomePageTests(TestCase):
         self.assertContains(response, 'id="game-form"')
         self.assertContains(response, 'value="En equipo"')
         self.assertContains(response, 'id="mission"')
+        self.assertContains(response, 'id="mission-card"')
+        self.assertContains(response, 'id="mission-progress"')
