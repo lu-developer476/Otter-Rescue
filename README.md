@@ -12,9 +12,11 @@
 
 ## Características
 
-- Partida configurable por modo, escenario y dificultad.
+- Partida configurable por modo, escenario y dificultad, con cuatro escenarios visualmente distintos.
 - Juego en `canvas` con controles de teclado y botones táctiles.
 - Objetivos de limpieza, colección de conchas, puntaje y bonus por colección completa.
+- Modo **Defensa de represa**: la nutria protege su represa a la izquierda, intercepta amenazas que llegan desde la derecha y recolecta ramas, corazones y escudos.
+- Oleadas y velocidad procedimentales: la dificultad aumenta de manera gradual durante cada partida.
 - Pausa, reinicio y mensajes de estado accesibles durante la partida.
 - Mejor puntaje conservado localmente en el navegador.
 - Interfaz en español, adaptable a distintos tamaños de pantalla.
@@ -58,7 +60,7 @@ Abrí [http://127.0.0.1:8000/](http://127.0.0.1:8000/) en el navegador.
 1. Elegí **Nueva partida** o **Empezar una misión**.
 2. Seleccioná el modo, el escenario y la dificultad, y creá la partida.
 3. Mové a la nutria con las flechas, **WASD** o los controles táctiles.
-4. Recogé residuos y conchas, evitá los invasores y llevá a la nutria a casa.
+4. En las misiones de exploración, recogé residuos y conchas, evitá los invasores y llevá a la nutria a casa. En **Defensa de represa**, atajá amenazas, juntá ramas para repararla y aprovechá los bonuses.
 5. Usá la tecla **P** o el botón **Pausar** para detener o reanudar la misión. El botón **Reiniciar** comienza una nueva partida con la configuración actual.
 
 El mejor puntaje se almacena en `localStorage` bajo la clave `otter-rescue-high-score`, por lo que permanece disponible en el mismo navegador.
