@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: otter-rescue
+    env: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn otter_rescue.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
