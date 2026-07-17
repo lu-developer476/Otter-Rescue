@@ -1,5 +1,13 @@
 # Rescate Nutria
 
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-5.1-092E20?logo=django&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=black)
+
 **Rescate Nutria** es una experiencia web educativa e infanto-juvenil creada con Django. La misión consiste en guiar a una nutria bebé de vuelta a su madriguera mientras se cuida el humedal: se recogen residuos y conchas, se evitan especies invasoras y se toman decisiones sin límite de tiempo.
 
 ## Características
