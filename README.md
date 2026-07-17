@@ -1,35 +1,98 @@
 # Rescate Nutria
 
-Una portada de juego infanto-juvenil hecha con Django: invita a rescatar a una nutria bebé mientras se exploran decisiones de cuidado del humedal. Incluye navegación hacia la guía y el ranking, y un configurador de partida con modo, escenario y dificultad.
+**Rescate Nutria** es una experiencia web educativa e infanto-juvenil creada con Django. La misión consiste en guiar a una nutria bebé de vuelta a su madriguera mientras se cuida el humedal: se recogen residuos y conchas, se evitan especies invasoras y se toman decisiones sin límite de tiempo.
+
+## Características
+
+- Partida configurable por modo, escenario y dificultad.
+- Juego en `canvas` con controles de teclado y botones táctiles.
+- Objetivos de limpieza, colección de conchas, puntaje y bonus por colección completa.
+- Pausa, reinicio y mensajes de estado accesibles durante la partida.
+- Mejor puntaje conservado localmente en el navegador.
+- Interfaz en español, adaptable a distintos tamaños de pantalla.
+
+## Requisitos
+
+- Python 3.12 o una versión compatible con Django 5.1.
+- `pip`.
+
+Las dependencias de la aplicación están definidas en [`requirements.txt`](requirements.txt): Django, Gunicorn y WhiteNoise.
 
 ## Ejecutar localmente
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-python manage.py migrate
-python manage.py runserver
-```
+1. Creá y activá un entorno virtual:
 
-Abrí `http://127.0.0.1:8000/`.
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
 
-## Variables de entorno para Render
+2. Instalá las dependencias y configurá las variables locales:
 
-| Variable | Valor recomendado | Uso |
+   ```bash
+   pip install -r requirements.txt
+   cp .env.example .env
+   ```
+
+3. Aplicá las migraciones e iniciá el servidor:
+
+   ```bash
+   python manage.py migrate
+   python manage.py runserver
+   ```
+
+Abrí [http://127.0.0.1:8000/](http://127.0.0.1:8000/) en el navegador.
+
+> El proyecto no carga automáticamente el archivo `.env`. Para usar valores distintos de los predeterminados, exportalos en la sesión de la terminal o configurá tu entorno de ejecución para que los inyecte.
+
+## Cómo jugar
+
+1. Elegí **Nueva partida** o **Empezar una misión**.
+2. Seleccioná el modo, el escenario y la dificultad, y creá la partida.
+3. Mové a la nutria con las flechas, **WASD** o los controles táctiles.
+4. Recogé residuos y conchas, evitá los invasores y llevá a la nutria a casa.
+5. Usá la tecla **P** o el botón **Pausar** para detener o reanudar la misión. El botón **Reiniciar** comienza una nueva partida con la configuración actual.
+
+El mejor puntaje se almacena en `localStorage` bajo la clave `otter-rescue-high-score`, por lo que permanece disponible en el mismo navegador.
+
+## Variables de entorno
+
+| Variable | Valor local sugerido | Uso |
 | --- | --- | --- |
-| `SECRET_KEY` | Una clave aleatoria larga | Firma de sesiones y protección criptográfica de Django. En Render puede generarse automáticamente con `generateValue`. |
-| `DEBUG` | `False` | Debe permanecer desactivado en producción. |
-| `ALLOWED_HOSTS` | `.onrender.com` | Permite el hostname entregado por Render y sus subdominios. Si se conecta un dominio propio, agregalo separado por comas. |
-| `CSRF_TRUSTED_ORIGINS` | `https://tu-servicio.onrender.com` | Requerido si el proyecto recibe formularios POST desde el dominio publicado. Para varios orígenes, usar comas. |
-| `PYTHON_VERSION` | `3.12.8` | Selecciona la versión de Python del servicio de Render. |
+| `SECRET_KEY` | Una clave larga y privada | Firma de sesiones y protección criptográfica de Django. |
+| `DEBUG` | `True` | Activa las herramientas de depuración durante el desarrollo. Debe ser `False` en producción. |
+| `ALLOWED_HOSTS` | `localhost,127.0.0.1` | Lista de hosts permitidos, separados por comas. |
+| `CSRF_TRUSTED_ORIGINS` | `https://tu-app.onrender.com` | Orígenes confiables para solicitudes POST, separados por comas. |
+| `PYTHON_VERSION` | `3.12.8` | Versión de Python usada por el despliegue en Render. |
 
-El archivo [`render.yaml`](render.yaml) ya contiene un Blueprint listo: instala dependencias, recopila estáticos, aplica migraciones y arranca Gunicorn. Para una base de datos persistente, reemplazá SQLite por PostgreSQL antes de manejar datos de usuarios en producción.
+Encontrá valores de ejemplo en [`.env.example`](.env.example).
+
+## Despliegue en Render
+
+El archivo [`render.yaml`](render.yaml) incluye un Blueprint para crear un servicio web de Python. Durante la compilación se ejecuta [`build.sh`](build.sh), que instala las dependencias, recopila los archivos estáticos y aplica las migraciones. El servicio se inicia con Gunicorn y WhiteNoise entrega los estáticos.
+
+Antes de publicar:
+
+- Usá una `SECRET_KEY` única y privada.
+- Mantené `DEBUG=False`.
+- Configurá `ALLOWED_HOSTS` con el dominio real del servicio y cualquier dominio propio.
+- Agregá a `CSRF_TRUSTED_ORIGINS` los orígenes HTTPS desde los que la aplicación recibirá formularios POST.
+- La configuración actual utiliza SQLite. Para datos persistentes de usuarios en producción, migrá a una base de datos administrada como PostgreSQL.
 
 ## Comprobaciones
 
 ```bash
 python manage.py test
 python manage.py collectstatic --noinput
+```
+
+## Estructura principal
+
+```text
+otter_rescue/                  Configuración del proyecto Django
+rescue/                        Aplicación, plantilla, estilos y lógica del juego
+rescue/templates/rescue/       Página principal
+rescue/static/rescue/          Recursos estáticos de la experiencia
+render.yaml                    Configuración de despliegue en Render
+build.sh                       Pasos de compilación para Render
 ```
