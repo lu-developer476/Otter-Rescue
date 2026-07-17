@@ -16,3 +16,6 @@ class HomePageTests(TestCase):
         self.assertContains(response, 'id="game"')
         self.assertContains(response, 'id="otter-canvas"')
         self.assertContains(response, 'id="trash-count"')
+        self.assertContains(response, 'id="shell-count"')
+        self.assertContains(response, 'id="score-count"')
+        self.assertContains(response, 'id="best-score"')
